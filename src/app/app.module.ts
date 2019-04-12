@@ -14,7 +14,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { FilterPipe} from './filter.pipe';
-import { Sidebar2Component } from './sidebar2/sidebar2.component';
 
 const appRoutes: Routes = [
   {
@@ -41,7 +40,6 @@ const appRoutes: Routes = [
     SidebarComponent,
     ProfileListComponent,
     FilterPipe,
-    Sidebar2Component
   ],
   imports: [
     BrowserModule,
