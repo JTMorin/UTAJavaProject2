@@ -1,56 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+ 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
+import { MainFeedComponent } from './main-feed/main-feed.component';
+import { DataService } from './data.service';
+import { InputFormComponent } from './input-form/input-form.component';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserListComponent } from './user-list/user-list.component';
 import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { LoginComponent } from './login/login.component';
 import { ProfileListComponent } from './profile-list/profile-list.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { FilterPipe} from './filter.pipe';
-
-const appRoutes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'forgot-password',
-    component: ForgotPasswordComponent
-  }
-];
-
+import { FormsModule } from '@angular/forms';
+ 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    LoginComponent,
+    routingComponents,
+    PageNotFoundComponent,
+    UserProfileComponent,
+    UserListComponent,
     RegisterComponent,
+    NavbarComponent,
     ForgotPasswordComponent,
-    SidebarComponent,
+    LoginComponent,
     ProfileListComponent,
-    FilterPipe,
+    SidebarComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    CommonModule,
-    NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Project2';
+  title = 'Project 2';
 }
