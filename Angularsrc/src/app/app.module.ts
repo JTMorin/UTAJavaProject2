@@ -11,6 +11,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProfileListComponent } from './profile-list/profile-list.component';
+import { FilterPipe} from './filter.pipe';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { GeneralFeedComponent } from './general-feed/general-feed.component';
 
 const appRoutes: Routes = [
   {
@@ -24,7 +29,16 @@ const appRoutes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent
-  }
+  },
+  {
+    path: 'general-feed',
+    component: GeneralFeedComponent
+  },
+  {
+    path: '',
+    redirectTo: '/general-feed',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
@@ -33,7 +47,11 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    GeneralFeedComponent,
+    SidebarComponent,
+    ProfileListComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +59,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     CommonModule,
-    NgbModule.forRoot(),
+    AngularFontAwesomeModule,
+    NgbModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
