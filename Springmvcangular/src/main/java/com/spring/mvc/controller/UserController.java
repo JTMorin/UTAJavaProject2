@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.mvc.component.Post;
@@ -27,5 +29,21 @@ public class UserController {
 	public @ResponseBody List<User> getAllUsers(){
 		return userService.getAllUsers();
 	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping(value="{num}/getUser.app")
+	public @ResponseBody User getUser(@PathVariable("num") int num) {
+		return userService.getUser(num);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

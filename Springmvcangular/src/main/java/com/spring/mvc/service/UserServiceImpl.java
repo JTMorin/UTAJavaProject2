@@ -18,4 +18,7 @@ public class UserServiceImpl {
 		return userdao.selectAllFromDb();
 	}
 	
+	public User getUser(int id) {
+		return userdao.selectById(id);
+	}
 }
