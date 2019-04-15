@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+          <a class="nav-link" routerLink="/general-feed">General</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="container h-100">
+        <div class="d-flex justify-content-left h-100">
+          <div class="searchbar">
+            <input class="search_input" type="text" name="" placeholder="Search People...">
+            <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        
+        
+            
+          
+            <li class="nav-item dropdown">
+              <a class ="nav-link dropdown-toggle" id="dropdownBasic1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user"></i><span class="caret"></span>
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+
+                <button class="dropdown-item" routerLink="/login" routerLinkActive="active">Login</button>
+                <button class="dropdown-item" routerLink="/register" routerLinkActive="active">Register</button>
+                <button class="dropdown-item" routerLink="/forgot-password" routerLinkActive="active">Recover Password</button>
+                <button class="dropdown-item" routerLink="/feed" routerLinkActive="active">Feed</button>
+                <button class="dropdown-item" routerLink="/users" routerLinkActive="active">user List</button>
+    
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </nav>
+    

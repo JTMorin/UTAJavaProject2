@@ -1,0 +1,14 @@
+<form class="form-inline md-form form-sm active-cyan-2">
+    <input [(ngModel)]="searchFriends" class="form-control form-control-sm mr-3 w-5" type="text"
+      placeholder="Search Friends" aria-label="searchFriends" name="searchFriends" mdbInput style="margin-left: 10px;">
+    
+  </form>
+  
+  <ul *ngFor="let profile of profiles | filter : searchFriends" class="profileText">
+    <a href="#" class="profileText">
+      {{profile.name}}
+    </a>
+  </ul>
+  <ul *ngIf="(profiles | filter : searchFriends).length === 0" class="profileText2">
+      No results found.
+  </ul>

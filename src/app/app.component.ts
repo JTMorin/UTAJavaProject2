@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
  
 @Component({
   selector: 'app-root',
@@ -8,4 +10,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Project 2';
+
+  
 }

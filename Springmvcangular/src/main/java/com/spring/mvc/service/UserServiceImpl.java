@@ -21,4 +21,8 @@ public class UserServiceImpl {
 	public User getUser(int id) {
 		return userdao.selectById(id);
 	}
+	
+	public void addUser(User u) {
+		userdao.insert(u);
+	}
 }
