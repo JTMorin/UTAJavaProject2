@@ -1,6 +1,6 @@
 
 <body id="page-top">
-  <form #userForm="ngForm" (ngSubmit)='onSubmit()'>
+  <form #userForm="ngForm" (ngSubmit)='onSubmit()' action='http://localhost:4200/login'> 
 
     <!-- {{ userForm.value | json }} -->
 
@@ -48,7 +48,7 @@
   
             <div class="text-center" style="margin-top: 20px;">
               <span class="txt1"> Already have an account? </span> <a
-                href="/ReimbursementApplication/html/login.html" class="txt2 hov1"> Log in </a>
+                href='http://localhost:9005/Springmvcangular/login' class="txt2 hov1"> Log in </a>
             </div>
           </div>
         </div>

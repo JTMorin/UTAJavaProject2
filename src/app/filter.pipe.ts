@@ -8,7 +8,11 @@ export class FilterPipe implements PipeTransform {
     if(!searchFriends) return items;
 searchFriends = searchFriends.toLowerCase();
 return items.filter( it => {
-      return it.name.toLowerCase().substring(0,searchFriends.length).includes(searchFriends,0);
+      let result = it.firstName.toLowerCase().substring(0,searchFriends.length).includes(searchFriends,0);
+      result += it.lastName.toLowerCase().substring(0,searchFriends.length).includes(searchFriends,0);
+      result += (it.firstName.toLowerCase().substring(0,searchFriends.length) + " " + 
+      it.lastName.toLowerCase().substring(0,searchFriends.length-it.firstName.length)).includes(searchFriends,0);
+      return result;
     });
    }
 }

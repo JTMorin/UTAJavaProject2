@@ -14,6 +14,7 @@ export class RegisterService {
   enroll(user: User) {
     console.log(user);
     return this._http.post<any>(this._url + '/insertUser.app', user);
+    console.log(this._http.post<any>(this._url + '/insertUser.app', user));
   }
 
   // getAllUsers() {
