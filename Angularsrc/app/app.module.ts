@@ -19,6 +19,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FilterPipe} from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
  
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     ProfileListComponent,
     SidebarComponent,
-    FilterPipe
+    FilterPipe,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

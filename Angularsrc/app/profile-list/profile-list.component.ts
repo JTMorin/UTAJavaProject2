@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Profile } from '../profile';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'
 
@@ -17,10 +16,10 @@ export class ProfileListComponent implements OnInit {
   constructor(private _http: HttpClient, private router: Router) { }
 
   ngOnInit() {
-    this._http.get(this.APP_URL + '/getAllUsers.app').subscribe(
-      data => {
-        this.myresponseUsers = data;
-      },
+      this._http.get(this.APP_URL + '/getAllUsers.app').subscribe(
+        data => {
+          this.myresponseUsers = data;
+        },
       error => {
         console.log('Error occured', error);
       }
@@ -28,8 +27,7 @@ export class ProfileListComponent implements OnInit {
   }
 
   onSelect(id) {
-    console.log(id);
-    this.router.navigate(['/feed',id]);
+    location.assign('/feed/' + id);
   }
 
 }
