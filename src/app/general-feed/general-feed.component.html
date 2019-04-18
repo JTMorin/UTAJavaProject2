@@ -1,0 +1,59 @@
+<div class="container">
+
+  <h1 class="text-success text-center">Welcome to {{ title }}!</h1>
+  <hr />
+
+<app-post-form></app-post-form>
+
+<div *ngIf="myresponseUsers">
+  <div *ngFor="let user of myresponseUsers">
+    <div *ngIf="user.posts?.length">
+      <div *ngFor="let post of user.posts">
+        <table class="table table-bordered table-hover" style="background-color: rgb(255, 255, 255)">
+          <thead>
+            <tr>
+
+              <td colspan="2">
+                <img src="{{user.picture}}" class="img-thumbnail mx-auto" style="width: 7%">
+                - <b>{{user.userName}}</b> >> <b>Posted at:</b> {{post.time | date: 'short'}}
+              </td>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngIf="post.postMedia">
+
+                <img src='{{post.postMedia}}' class="img-thumbnail mx-auto d-block" style="width: 70%">
+
+              </td>
+              <td>{{post.postBody}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div *ngIf="post.comments?.length">
+          <div *ngFor="let comment of post.comments">
+            <table class="table table-bordered table-hover">
+              <tr>
+                <td style="background-color: rgb(140, 255, 136)">
+                  <img src="{{myresponseUsers[comment.authorId - 1].picture}}" class="img-thumbnail mx-auto"
+                    style="width: 20%">
+                  <b>{{myresponseUsers[comment.authorId - 1].userName}}</b> - <div style="font-size: 0.8em">
+                    {{comment.commentTime | date: 'short'}}</div>
+                </td>
+                <td style="background-color: rgb(223, 255, 220); width: 75%">{{comment.commentBody}}
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+        <app-comment-form></app-comment-form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<app-sidebar></app-sidebar>

@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-          <a class="nav-link" routerLink="/general-feed">Home</a>
+          <a class="nav-link" routerLink="/home">Home</a>
           </li>
         </ul>
       </div>
@@ -34,7 +34,7 @@
                   <button class="dropdown-item" routerLink="/forgot-password" routerLinkActive="active">Recover Password</button>
                 </ng-container>
                 <ng-container *ngIf="loggedIn === '1'">
-                  <button class="dropdown-item" routerLink="/feed" routerLinkActive="active">Feed</button>
+                  <button class="dropdown-item" routerLink="/home" routerLinkActive="active">Feed</button>
                   <button class="dropdown-item" routerLink="/users" routerLinkActive="active">Friend List</button>
                   <button class="dropdown-item" (click)="logout()">Logout</button>
                 </ng-container>

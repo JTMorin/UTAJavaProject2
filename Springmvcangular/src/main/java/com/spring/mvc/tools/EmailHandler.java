@@ -44,7 +44,7 @@ public class EmailHandler {
     	
     	final String BODY = String.join(System.getProperty("line.separator"),
 				"<p>Follow this link to reset your password ",
-				"<a href=http://localhost:4200/reset-password/" + uuid + "><a href=http://localhost:4200/reset-password?uuid=" + uuid + "</a>");
+				"<a href='http://localhost:4200/reset-password/" + uuid + "'>http://localhost:4200/reset-password/" + uuid + "</a>");
     	
         // Create a Properties object to contain connection configuration information.
     	Properties props = System.getProperties();

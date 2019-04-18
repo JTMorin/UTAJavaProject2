@@ -40,7 +40,7 @@ public class User {
 	private String organization;
 	
 	@Column(name="picture", nullable = true)
-	private String picture;
+	private String picture = "https://s3.us-east-2.amazonaws.com/project2socialnetworkbucket/placeholder.png";
 	
 	@Column(name="uuid", nullable = true)
 	private String uuid;

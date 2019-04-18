@@ -42,8 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
       cache: false,
       processData: false,
       success(data) {
-        const response = data;
-        console.log(response);
+        const response = JSON.parse(data);
 
         if (response.success) {
           self.router.navigate(['/result'], { state: { message: 'Email sent.' } });

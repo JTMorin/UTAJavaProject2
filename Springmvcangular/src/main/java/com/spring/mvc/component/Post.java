@@ -30,10 +30,10 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int postId;
 	
-	@Column(name="author_id", nullable = false)
+	@Column(name="author_id", nullable = true)
 	private int authorId;
 	
-	@Column(name="post_body", nullable = false)
+	@Column(name="post_body", nullable = true)
 	private String postBody;
 	
 	@Column(name="post_media", nullable = true)
@@ -49,8 +49,8 @@ public class Post {
 	private User userss;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="post_time", nullable = false)
-	private Date postTime;
+	@Column(name="post_time", nullable = true)
+	private Date postTime = new Date();
 	
 	public Post() {
 		
@@ -66,13 +66,23 @@ public class Post {
 	
 	
 
-	@Override
-	public String toString() {
-		return "Post [postId=" + postId + ", authorId=" + authorId + ", postBody=" + postBody + ", postMedia="
-				+ postMedia + ", time=" + postTime + "]";
-	}
+	
+	
+//	@Override
+//	public String toString() {
+//		return "Post [postId=" + postId + ", authorId=" + authorId + ", postBody=" + postBody + ", postMedia="
+//				+ postMedia + ", time=" + postTime + "]";
+//	}
 
 	
+
+	public Post(int authorId, String postBody) {
+		super();
+		this.authorId = authorId;
+		this.postBody = postBody;
+	}
+
+
 
 	public Post(int postId, int authorId, String postBody, String postMedia, List<Comment> comments,
 			User userss, Date postTime) {

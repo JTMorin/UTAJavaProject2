@@ -41,6 +41,8 @@ export class ProfilePageComponent implements OnInit {
 
   }
 
+  
+
 
   updateInfo(){
     document.getElementById('bgdRightColumn').innerHTML =

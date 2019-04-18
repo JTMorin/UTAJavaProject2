@@ -15,8 +15,8 @@ export class RegisterComponent implements OnInit {
   readonly APP_URL = 'http://localhost:9005/Springmvcangular';
   constructor(private router: Router) {
   }
-  
-  ngOnInit(){
+
+  ngOnInit() {
 
   }
 
@@ -34,8 +34,6 @@ export class RegisterComponent implements OnInit {
     if (failed) {
       return;
     }
-
-    
 
     const values = {
       email: (document.querySelector('#email') as HTMLInputElement).value,

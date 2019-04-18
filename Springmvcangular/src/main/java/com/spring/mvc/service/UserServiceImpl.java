@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.mvc.component.Post;
 import com.spring.mvc.component.User;
+import com.spring.mvc.repository.PostDao;
 import com.spring.mvc.repository.UserDao;
 
 @Service
@@ -29,6 +31,8 @@ public class UserServiceImpl {
 	public boolean addUser(User u) {
 		return userdao.insert(u);
 	}
+	
+
 	
 	public User getUserByEmailAndPW(String email, String password) {
 		User d = new User();

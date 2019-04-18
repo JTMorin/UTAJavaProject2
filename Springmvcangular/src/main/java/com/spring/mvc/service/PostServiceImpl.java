@@ -18,4 +18,13 @@ public class PostServiceImpl {
 	public List<Post> getAllPosts() {
 		return postdao.selectAllFromDb();
 	}
+	
+	public boolean addPost(Post p) {
+		System.out.println("in SErvice: " + p);
+		return postdao.insert(p);
+	}
+	
+//	public Post getPost() {
+//		return postdao.selectFromDb();
+//	}
 }

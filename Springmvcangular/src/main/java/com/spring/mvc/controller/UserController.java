@@ -31,6 +31,7 @@ public class UserController {
 
 	@Autowired
 	UserServiceImpl userService;
+
 	
 	public UserController() {
 		// TODO Auto-generated constructor stub
@@ -70,6 +71,10 @@ public class UserController {
 	}
 	
 	//testing jquery example
+
+	
+
+	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/insertUser2.app", method = RequestMethod.POST)
 	public @ResponseBody String getUser(@RequestBody User values2) {
@@ -129,6 +134,29 @@ public class UserController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/send-email.app", method = RequestMethod.POST)
 	public @ResponseBody String getUserByE(@RequestBody User user) throws JsonProcessingException, AddressException, UnsupportedEncodingException, MessagingException {
+		User u = userService.getUserByEmail(user.getEmail());
+		String ret = "";
+
+		if(u == null)
+		{
+			ret += "{\"success\": false}";
+		}
+		else
+		{
+			ObjectMapper mapper = new ObjectMapper();
+			//Object to JSON in String
+			String jsonInString = mapper.writeValueAsString(u);
+			ret += "{\"success\": true, \"user\": " + jsonInString + "}";
+			EmailHandler.sendEmail(String.valueOf(u.getUserId()) , u.getEmail());
+		}
+		
+		return ret;
+	}
+	
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/updatePassword.app", method = RequestMethod.POST)
+	public @ResponseBody String UpdatePW(@RequestBody User user) throws JsonProcessingException, AddressException, UnsupportedEncodingException, MessagingException {
 		User u = userService.getUserByEmail(user.getEmail());
 		String ret = "";
 

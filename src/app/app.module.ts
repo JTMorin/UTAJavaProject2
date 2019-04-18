@@ -24,6 +24,9 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { UpdateProfilePageComponent } from './update-profile-page/update-profile-page.component';
 import { ResultComponent } from './result/result.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { PostFormComponent } from './post-form/post-form.component';
+import { GeneralFeedComponent } from './general-feed/general-feed.component';
  
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     ProfilePageComponent,
     UpdateProfilePageComponent,
     ResultComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    CommentFormComponent,
+    PostFormComponent,
+    GeneralFeedComponent
   ],
   imports: [
     BrowserModule,

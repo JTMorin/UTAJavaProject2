@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.css']
+  styleUrls: ['./reset-password.component.css',
+  '../styles/global/common.css',
+  '../styles/global/login.css']
 })
 export class ResetPasswordComponent implements OnInit {
 
