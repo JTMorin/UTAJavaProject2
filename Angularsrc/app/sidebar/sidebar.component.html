@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body>
+<body *ngIf='user'>
 
 <div id="mySidebar" class="sidebar">
     <app-profile-list></app-profile-list>
@@ -12,7 +12,7 @@
 
 
 <div id="main">
-  <button class="openbtn" (click)="toggleNav()" id="button">⮜</button>  
+  <button class="openbtn" (click)="toggleNav()" id="button">Search Friends ⮜</button>  
 </div>
 
 </body>

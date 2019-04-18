@@ -1,18 +1,16 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="#">Social-Lite</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
-  
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-          <a class="nav-link" routerLink="/general-feed">General</a>
+          <a class="nav-link" routerLink="/general-feed">Home</a>
           </li>
         </ul>
       </div>
-  
       <div class="container h-100">
         <div class="d-flex justify-content-left h-100">
           <div class="searchbar">
@@ -21,30 +19,28 @@
           </div>
         </div>
       </div>
-  
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-        
-        
-            
-          
             <li class="nav-item dropdown">
               <a class ="nav-link dropdown-toggle" id="dropdownBasic1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Logged in as <span style='margin-right: 10px; color: blue' *ngIf='userName'><b>{{userName}}</b></span>
               <i class="fa fa-user"></i><span class="caret"></span>
               </a>
-            
-              <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
-
-                <button class="dropdown-item" routerLink="/login" routerLinkActive="active">Login</button>
-                <button class="dropdown-item" routerLink="/register" routerLinkActive="active">Register</button>
-                <button class="dropdown-item" routerLink="/forgot-password" routerLinkActive="active">Recover Password</button>
-                <button class="dropdown-item" routerLink="/feed" routerLinkActive="active">Feed</button>
-                <button class="dropdown-item" routerLink="/users" routerLinkActive="active">user List</button>
-    
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownBasic1">
+                <ng-container *ngIf="loggedIn !== '1'">
+                  <button class="dropdown-item" routerLink="/login" routerLinkActive="active">Login</button>
+                  <button class="dropdown-item" routerLink="/register" routerLinkActive="active">Register</button>
+                  <button class="dropdown-item" routerLink="/forgot-password" routerLinkActive="active">Recover Password</button>
+                </ng-container>
+                <ng-container *ngIf="loggedIn === '1'">
+                  <button class="dropdown-item" routerLink="/feed" routerLinkActive="active">Feed</button>
+                  <button class="dropdown-item" routerLink="/users" routerLinkActive="active">Friend List</button>
+                  <button class="dropdown-item" (click)="logout()">Logout</button>
+                </ng-container>
               </div>
             </li>
         </ul>
       </div>
     </div>
-    </nav>
-    
+  </nav>

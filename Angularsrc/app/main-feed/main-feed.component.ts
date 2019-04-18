@@ -74,10 +74,6 @@ export class MainFeedComponent implements OnInit {
     this._http.get(this.APP_URL + '/getAllUsers.app').subscribe(
       data => {
         this.myresponseUsers = data;
-        for(let i = 0; i < this.myresponseUsers.length; i++){
-          if(!this.myresponseUsers[i].picture)
-          {this.myresponseUsers[i].picture = "https://s3.us-east-2.amazonaws.com/project2socialnetworkbucket/placeholder.png"};
-        }
         console.log(this.myresponseUsers);
       },
       error => {

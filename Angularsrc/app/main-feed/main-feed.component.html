@@ -39,7 +39,7 @@
             <td>{{employee.name}}</td>
             <td>{{employee.mobile}}</td>
             <td>{{employee.address}}</td>
-            <td><img src="{{employee.companylogo}}" alt="Profile Pic" class="img-thumbnail mx-auto d-block" style="width: 30%" /></td>
+            <td><img src="{{employee.companylogo}}" alt="Company logo" class="img-thumbnail mx-auto d-block" style="width: 30%" /></td>
           </tr>
         </tbody>
       </table>
@@ -60,7 +60,7 @@
             <td>{{food.foodId}}</td>
             <td>{{food.dishName}}</td>
             <td>{{food.calories}}</td>
-            <td><img src="{{food.picture}}" alt="Profile Picture" class="img-thumbnail mx-auto d-block" style="width: 50%" /></td>
+            <td><img src="{{food.picture}}" alt="Company logo" class="img-thumbnail mx-auto d-block" style="width: 50%" /></td>
           </tr>
         </tbody>
       </table>
@@ -79,7 +79,7 @@
             <td>{{post.postId}}</td>
             <td>{{post.authorId}}</td>
             <td style='width: 30%'>{{post.postBody}}</td>
-            <td><img src="{{post.postMedia}}" alt="Profile Picture" class="img-thumbnail mx-auto d-block" style="width: 50%" /></td>
+            <td><img src="{{post.postMedia}}" alt="Company logo" class="img-thumbnail mx-auto d-block" style="width: 50%" /></td>
           
 
                   <div *ngIf="post.comments?.length">
@@ -101,6 +101,7 @@
       </table>
     </div>
 
+    <app-post-form></app-post-form>
 
     <div *ngIf="myresponseUsers">
       <div *ngFor="let user of myresponseUsers">
@@ -119,7 +120,7 @@
               <td>{{user.userId}}</td>
               <td>{{user.userName}}</td>
               <td>{{user.password}}</td>
-              <td><img src="{{user.picture}}" alt="Profile Picture" class="img-thumbnail mx-auto d-block" style="width: 50%" /></td>
+              <td><img src="{{user.picture}}" alt="Company logo" class="img-thumbnail mx-auto d-block" style="width: 50%" /></td>
               <td>{{user.organization}}</td>
               <td>{{user.firstName}}</td>
               <td>{{user.lastName}}</td>
@@ -166,7 +167,7 @@
                 </div>
 
               </div>
-
+              <app-comment-form></app-comment-form>
 
           </div>
         </div>

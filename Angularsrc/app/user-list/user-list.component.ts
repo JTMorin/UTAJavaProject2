@@ -2,14 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-user-list',
   template: `
     <h3>User List</h3>
-    <ul class='items'>
+    <ul class='items list-group'>
     <div *ngFor='let user of myresponseUsers'>
-      <li (click)='onSelect(user.userId)' >
-        <span class='badge'>{{user.userId}}</span> {{user.userName}}
+      <li class='list-group-item' (click)='onSelect(user.userId)' >
+        <span><img class="img-thumbnail mx-auto" style="width: 5%" src={{user.picture}}/></span>
+      <span class='badge'>
+        {{user.userId}}
+        </span> {{user.userName}}
       </li>
       </div>
     </ul>

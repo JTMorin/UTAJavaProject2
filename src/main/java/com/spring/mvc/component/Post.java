@@ -1,17 +1,24 @@
 package com.spring.mvc.component;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -31,22 +38,66 @@ public class Post {
 	
 	@Column(name="post_media", nullable = true)
 	private String postMedia;
-	
+		
 	@OneToMany(mappedBy = "postss", fetch = FetchType.EAGER)
 	@JsonManagedReference
 	private List<Comment> comments;
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id")
+	@JsonBackReference
+	private User userss;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="post_time", nullable = false)
+	private Date postTime;
 	
 	public Post() {
 		
 	}
 
 	
+	
+//	@Override
+//	public String toString() {
+//		return "Post [postId=" + postId + ", authorId=" + authorId + ", postBody=" + postBody + ", postMedia="
+//				+ postMedia + "]";
+//	}
+	
+	
+
 	@Override
 	public String toString() {
 		return "Post [postId=" + postId + ", authorId=" + authorId + ", postBody=" + postBody + ", postMedia="
-				+ postMedia + "]";
+				+ postMedia + ", time=" + postTime + "]";
 	}
+
 	
+
+	public Post(int postId, int authorId, String postBody, String postMedia, List<Comment> comments,
+			User userss, Date postTime) {
+		super();
+		this.postId = postId;
+		this.authorId = authorId;
+		this.postBody = postBody;
+		this.postMedia = postMedia;
+		this.postTime = postTime;
+		this.comments = comments;
+		this.userss = userss;
+	}
+
+
+
+	public Post(int postId, int authorId, String postBody, String postMedia, List<Comment> comments, User userss) {
+		super();
+		this.postId = postId;
+		this.authorId = authorId;
+		this.postBody = postBody;
+		this.postMedia = postMedia;
+		this.comments = comments;
+		this.userss = userss;
+	}
+
 
 	public Post(int postId, int authorId, String postBody, String postMedia, List<Comment> comments) {
 		super();
@@ -58,6 +109,29 @@ public class Post {
 	}
 
 	
+	
+	public Date getTime() {
+		return postTime;
+	}
+
+
+
+	public void setTime(Date postTime) {
+		this.postTime = postTime;
+	}
+
+
+
+	public User getUserss() {
+		return userss;
+	}
+
+
+	public void setUserss(User userss) {
+		this.userss = userss;
+	}
+
+
 	public List<Comment> getComments() {
 		return comments;
 	}

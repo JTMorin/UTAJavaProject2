@@ -19,6 +19,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FilterPipe} from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PersonalProfileComponent } from './personal-profile/personal-profile.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { UpdateProfilePageComponent } from './update-profile-page/update-profile-page.component';
+import { ResultComponent } from './result/result.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { PostFormComponent } from './post-form/post-form.component';
  
 @NgModule({
   declarations: [
@@ -33,7 +40,14 @@ import { RouterModule } from '@angular/router';
     LoginComponent,
     ProfileListComponent,
     SidebarComponent,
-    FilterPipe
+    FilterPipe,
+    PersonalProfileComponent,
+    ProfilePageComponent,
+    UpdateProfilePageComponent,
+    ResultComponent,
+    ResetPasswordComponent,
+    CommentFormComponent,
+    PostFormComponent
   ],
   imports: [
     BrowserModule,

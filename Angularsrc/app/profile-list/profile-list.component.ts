@@ -28,8 +28,8 @@ export class ProfileListComponent implements OnInit {
   }
 
   onSelect(id) {
-    console.log(id);
-    this.router.navigate(['/feed',id]);
+    //console.log(id);
+    location.assign('/feed/'+ id);
   }
 
 }
