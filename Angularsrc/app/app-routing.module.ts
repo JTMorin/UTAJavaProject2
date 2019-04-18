@@ -10,15 +10,16 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LoginComponent } from './login/login.component';
 import { ResultComponent } from './result/result.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { GeneralFeedComponent } from './general-feed/general-feed.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/feed', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'feed', component: MainFeedComponent },
   { path: 'feed/:id', component: UserProfileComponent},
   { path: 'feed2/:id', component: UserProfileComponent},
   { path: 'users', component: UserListComponent },
   { path: 'reset-password/*', component: ResetPasswordComponent },
-  
+  { path: 'home', component: GeneralFeedComponent },
   { path: 'result', component: ResultComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent},
