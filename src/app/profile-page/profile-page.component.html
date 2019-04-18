@@ -1,0 +1,72 @@
+
+    <div class="split left" id="bgdLeftColumn">
+        <!-- background left column, where the profile pic and info lie -->
+        <div class="centered" id="picAndInfo" *ngIf="myresponseUsers">
+            <h3 style="text-align:center">{{user.firstName}} {{user.lastName}}</h3>
+            <!-- bootstrap to prompt user to add a profile picture -->
+            <form class="md-form">
+                <div class="file-field">
+                    <div class="mb-4">
+                        <span *ngIf='!user.picture'>
+                            <img src="http://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png"
+                                style="width: 200px;" class="center"> <!-- this is the placeholder profile picture -->
+                        </span>
+                        <span *ngIf='user.picture'>
+                            <img src='{{user.picture}}' style="width: 200px;" class="center">
+                            <!-- this is the placeholder profile picture -->
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile04"> <label
+                                class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Button</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- bootstrap -->
+            <br />
+            <table border="1" class="fixed">
+                <!-- table of "fixed" class so that user info stays inside the table -->
+                <tr>
+                    <td>Username: {{user?.userName}}</td>
+                </tr>
+                <tr>
+                    <td>Email: {{user?.email}}</td>
+                </tr>
+                <tr>
+                    <td>Organization: {{user.organization}}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                </tr>
+                <tr>
+                    <td>Add bio here</td>
+                </tr>
+            </table>
+            <button *ngIf='user.userName == storedUser' (click)='updateInfo()' class='btn btn-primary'>Update Information</button>
+        </div>
+    </div>
+    <div class="split right" id="bgdRightColumn">
+        <!-- background right column, where the feed lies -->
+        <!-- <div class="centered" id=feedTable> -->
+        <div class="centered" id="feedTable">
+            <table border="1" style="width: 100%">
+                <thead>
+                    <tr>
+                        <td>Post header</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Post body</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <app-sidebar></app-sidebar>
+    <!-- bootstrap scripts -->

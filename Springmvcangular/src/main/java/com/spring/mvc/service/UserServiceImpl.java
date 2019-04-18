@@ -22,7 +22,25 @@ public class UserServiceImpl {
 		return userdao.selectById(id);
 	}
 	
-	public void addUser(User u) {
-		userdao.insert(u);
+//	public void addUser(User u) {
+//		userdao.insert(u);
+//	}
+	
+	public boolean addUser(User u) {
+		return userdao.insert(u);
+	}
+	
+	public User getUserByEmailAndPW(String email, String password) {
+		User d = new User();
+		d = userdao.getUserByEmailAndPassword(email, password);
+		System.out.println(d);
+		return d;
+	}
+	
+	public User getUserByEmail(String email) {
+		User d = new User();
+		d = userdao.getUserByEmail(email);
+		System.out.println(d);
+		return d;
 	}
 }
